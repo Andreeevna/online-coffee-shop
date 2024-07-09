@@ -1,6 +1,6 @@
-#Full-stack online store
+# Full-stack online store
 
-##Technical stack
+## Technical stack
 
 - Next.js / React TypeScript
 - Tailwind CSS
