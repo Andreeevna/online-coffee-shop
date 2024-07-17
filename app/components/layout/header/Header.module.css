@@ -1,1 +1,3 @@
-.header{@apply flex}
+.header {
+	@apply flex w-full justify-between;
+}
