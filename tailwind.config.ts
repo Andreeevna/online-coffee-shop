@@ -8,6 +8,7 @@ const constants = {
 	white: '#ffffff',
 	red: '#F23C3D',
 	gray: '#E8E7E3',
+	brown: '#B6B4B3',
 	brige: '#A49B8F',
 	'transparent-color': '#1C00ff00',
 }

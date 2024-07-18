@@ -9,4 +9,11 @@
 .search::before {
 	content: '';
 	@apply bg-light-green pt-[120%] w-[120%]  rounded-full absolute -top-[300%] -left-[20%];
+	z-index: -1;
+}
+
+.searchInput {
+	padding-bottom: 5px;
+	z-index: 100;
+	border-bottom: 2px solid #b6b4b3;
 }
