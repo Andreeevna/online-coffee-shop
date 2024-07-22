@@ -15,7 +15,8 @@ const Search: FC = () => {
 					components: {
 						Input: {
 							hoverBorderColor: 'transparent',
-							activeBorderColor: 'none',
+							activeBorderColor: 'transparent',
+							activeShadow: 'transparent',
 						},
 					},
 					token: {
@@ -39,6 +40,7 @@ const Search: FC = () => {
 					className={styles.searchInput}
 					enterButton={false}
 				/>
+
 				{/* <Input prefix={<SearchOutlined />} placeholder='Search' allowClear /> */}
 			</ConfigProvider>
 		</div>

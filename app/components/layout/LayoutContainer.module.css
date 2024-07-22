@@ -1,0 +1,7 @@
+.layout main {
+	@apply py-8 px-10;
+}
+
+.layout {
+	@apply max-w-[1440px];
+}
