@@ -1,3 +1,4 @@
+import { ChakraProvider } from '@chakra-ui/react'
 import 'antd/dist/reset.css'
 
 export const metadata = {
@@ -12,7 +13,9 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang='en'>
-			<body>{children}</body>
+			<ChakraProvider>
+				<body>{children}</body>
+			</ChakraProvider>
 		</html>
 	)
 }
