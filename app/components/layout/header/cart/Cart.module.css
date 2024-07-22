@@ -1,0 +1,17 @@
+.wrapper-cart {
+}
+
+.heading {
+	@apply flex items-center;
+}
+
+.badge {
+	@apply mr-4 flex h-5 w-5 items-center justify-center rounded-full bg-red p-1 text-sm text-white;
+}
+
+.text {
+	@apply tracking-widest;
+}
+
+.cart {
+}

@@ -14,9 +14,9 @@ export const CartItem: FC<{ item: ICartItem }> = ({ item }) => {
 				height={100}
 			/>
 			<div>
-				<div className={styles.names}>{item.product.name}</div>
+				<div className={styles.name}>{item.product.name}</div>
 				<div className={styles.price}>
-					{new Intl.NumberFormat(undefined, {
+					{new Intl.NumberFormat('ru-RU', {
 						style: 'currency',
 						currency: 'USD',
 					}).format(item.product.price)}
