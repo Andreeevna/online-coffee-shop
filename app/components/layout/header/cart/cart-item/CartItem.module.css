@@ -1,8 +1,11 @@
 .item {
+	@apply mb-5 flex items-center gap-5;
 }
 
 .name {
+	@apply w-32 truncate tracking-widest font-semibold;
 }
 
 .price {
+	@apply text-sm text-brige;
 }

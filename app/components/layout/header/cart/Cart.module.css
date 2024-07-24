@@ -14,5 +14,16 @@
 }
 
 .cart {
-	@apply p-5;
+}
+
+.cart-footer {
+	@apply flex flex-col;
+}
+
+.cart-footer span:first-child {
+	@apply mb-1 text-brige text-sm;
+}
+
+.cart-footer span:last-child {
+	@apply font-bold text-lg;
 }
