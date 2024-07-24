@@ -40,8 +40,6 @@ const Search: FC = () => {
 					className={styles.searchInput}
 					enterButton={false}
 				/>
-
-				{/* <Input prefix={<SearchOutlined />} placeholder='Search' allowClear /> */}
 			</ConfigProvider>
 		</div>
 	)

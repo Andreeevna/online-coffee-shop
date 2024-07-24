@@ -22,15 +22,15 @@ const Cart: FC = () => {
 	//TODO add redux
 
 	return (
-		<>
+		<div>
 			<div className={styles['wrapper-cart']}>
 				<button
 					className={styles.heading}
 					onClick={() => setIsOpen(!isOpen)}
 					ref={btnRef}
 				>
-					<span className={styles.badge}>1</span>
-					<span className={styles.text}>My basket</span>
+					<p className={styles.badge}>1</p>
+					<p className={styles.text}>My basket</p>
 				</button>
 			</div>
 
@@ -43,7 +43,7 @@ const Cart: FC = () => {
 				<DrawerOverlay />
 				<DrawerContent>
 					<DrawerCloseButton />
-					<DrawerHeader>My cart</DrawerHeader>
+					<DrawerHeader>My basket</DrawerHeader>
 
 					<DrawerBody>
 						<div className={styles.cart}>
@@ -53,16 +53,21 @@ const Cart: FC = () => {
 						</div>
 					</DrawerBody>
 
-					<DrawerFooter justifyContent='space-between' alignItems='center'>
+					<DrawerFooter
+						justifyContent='space-between'
+						alignItems='center'
+						borderTopColor='#F7F4F0'
+						borderTopWidth={1}
+					>
 						<div className={styles['cart-footer']}>
-							<span>Total:</span>
-							<span>$100</span>
+							<div>Total:</div>
+							<div>$100</div>
 						</div>
 						<Button colorScheme='green'>Checkout</Button>
 					</DrawerFooter>
 				</DrawerContent>
 			</Drawer>
-		</>
+		</div>
 	)
 }
 

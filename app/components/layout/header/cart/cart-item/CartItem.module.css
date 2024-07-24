@@ -1,5 +1,5 @@
 .item {
-	@apply mb-5 flex items-center gap-5;
+	@apply pb-6 pt-4 flex items-center gap-5 border-b border-b-[#F7F4F0];
 }
 
 .name {
@@ -7,5 +7,5 @@
 }
 
 .price {
-	@apply text-sm text-brige;
+	@apply text-sm text-brige mb-2;
 }

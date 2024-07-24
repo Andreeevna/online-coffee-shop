@@ -20,10 +20,10 @@
 	@apply flex flex-col;
 }
 
-.cart-footer span:first-child {
+.cart-footer div:first-child {
 	@apply mb-1 text-brige text-sm;
 }
 
-.cart-footer span:last-child {
+.cart-footer div:last-child {
 	@apply font-bold text-lg;
 }

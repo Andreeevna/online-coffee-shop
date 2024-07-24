@@ -8,7 +8,6 @@ export const CartActions: FC = () => {
 			step: 1,
 			defaultValue: 1,
 			min: 1,
-			max: 5,
 		})
 
 	const inc = getIncrementButtonProps()
@@ -16,17 +15,29 @@ export const CartActions: FC = () => {
 	const input = getInputProps()
 
 	return (
-		<div>
-			<HStack>
-				<Button {...dec}>
+		<div className='mt-3'>
+			<HStack maxWidth='300px'>
+				<Button {...dec} boxSize={7} fontSize={12}>
 					{' '}
-					<MinusIcon />
+					<MinusIcon fontSize={10} />
 				</Button>
-				<Input {...input} focusBorderColor='green.400' />
-				<Button {...inc}>
-					<AddIcon />
+				<Input
+					{...input}
+					focusBorderColor='green.400'
+					readOnly
+					_hover={{ cursor: 'default' }}
+					fontSize={12}
+					boxSize={7}
+					padding={1.5}
+					textAlign='center'
+				/>
+				<Button {...inc} boxSize={7} fontSize={12}>
+					<AddIcon fontSize={10} />
 				</Button>
 			</HStack>
+			<Button variant='link' color='#F23C3D' marginTop='3' opacity={0.7}>
+				Remove
+			</Button>
 		</div>
 	)
 }
