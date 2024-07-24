@@ -50,7 +50,7 @@ const Cart: FC = () => {
 							{cart.map(item => {
 								return <CartItem item={item} key={item.id} />
 							})}
-						</div>{' '}
+						</div>
 					</DrawerBody>
 
 					<DrawerFooter justifyContent='space-between' alignItems='center'>
