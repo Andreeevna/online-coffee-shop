@@ -1,5 +1,7 @@
 import { ChakraProvider } from '@chakra-ui/react'
 import 'antd/dist/reset.css'
+import { Provider } from 'react-redux'
+import { store } from './store/store'
 
 export const metadata = {
 	title: 'Online coffee',
@@ -14,7 +16,9 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body>
-				<ChakraProvider>{children}</ChakraProvider>
+				<Provider store={store}>
+					<ChakraProvider>{children}</ChakraProvider>
+				</Provider>
 			</body>
 		</html>
 	)
