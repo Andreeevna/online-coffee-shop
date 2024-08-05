@@ -5,7 +5,6 @@ import { ICartItem } from '@/types/cart-item.interface'
 import { AddIcon, MinusIcon } from '@chakra-ui/icons'
 import { Button, HStack, Input, useNumberInput } from '@chakra-ui/react'
 import { FC } from 'react'
-import { useDispatch } from 'react-redux'
 
 export const CartActions: FC<{ item: ICartItem }> = ({ item }) => {
 	const { getInputProps, getIncrementButtonProps, getDecrementButtonProps } =
@@ -19,14 +18,17 @@ export const CartActions: FC<{ item: ICartItem }> = ({ item }) => {
 	const dec = getDecrementButtonProps()
 	const input = getInputProps()
 
-	const dispatch = useDispatch()
-
-	const { removeFromCart } = useActions()
+	const { removeFromCart, changeQuantity } = useActions()
 
 	return (
 		<div className='mt-3'>
 			<HStack maxWidth='300px'>
-				<Button {...dec} boxSize={7} fontSize={12}>
+				<Button
+					{...dec}
+					boxSize={7}
+					fontSize={12}
+					onClick={() => changeQuantity({ id: item.id, type: 'minus' })}
+				>
 					{' '}
 					<MinusIcon fontSize={10} />
 				</Button>
@@ -40,7 +42,12 @@ export const CartActions: FC<{ item: ICartItem }> = ({ item }) => {
 					padding={1.5}
 					textAlign='center'
 				/>
-				<Button {...inc} boxSize={7} fontSize={12}>
+				<Button
+					{...inc}
+					boxSize={7}
+					fontSize={12}
+					onClick={() => changeQuantity({ id: item.id, type: 'plus' })}
+				>
 					<AddIcon fontSize={10} />
 				</Button>
 			</HStack>

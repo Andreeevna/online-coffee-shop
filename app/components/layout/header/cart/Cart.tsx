@@ -21,7 +21,10 @@ const Cart: FC = () => {
 	const btnRef = useRef<HTMLButtonElement>(null)
 	const cart = useTypedSelector(state => state.cart.items)
 
-	const total = cart.reduce((acc, item) => (acc += item.product.price), 0)
+	const total = cart.reduce(
+		(acc, item) => (acc += item.product.price * item.quantity),
+		0
+	)
 
 	return (
 		<div>
