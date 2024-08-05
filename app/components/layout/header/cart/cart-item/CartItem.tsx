@@ -23,7 +23,7 @@ export const CartItem: FC<{ item: ICartItem }> = ({ item }) => {
 						currency: 'USD',
 					}).format(item.product.price)}
 				</div>
-				<CartActions />
+				<CartActions item={item} />
 			</div>
 		</div>
 	)

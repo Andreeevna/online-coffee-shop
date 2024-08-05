@@ -20,8 +20,6 @@ const Cart: FC = () => {
 	const btnRef = useRef<HTMLButtonElement>(null)
 	const cart = useTypedSelector(state => state.cart.items)
 
-	//TODO add redux
-
 	return (
 		<div>
 			<div className={styles['wrapper-cart']}>
