@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { FC } from 'react'
 
 import { ICartItem } from '@/types/cart-item.interface'
+import { formatToCurrentcy } from '@/utils/format-to'
 import styles from './CartItem.module.css'
 import { CartActions } from './cart-actions/CartActions'
 
@@ -18,10 +19,7 @@ export const CartItem: FC<{ item: ICartItem }> = ({ item }) => {
 			<div>
 				<div className={styles.name}>{item.product.name}</div>
 				<div className={styles.price}>
-					{new Intl.NumberFormat('ru-RU', {
-						style: 'currency',
-						currency: 'USD',
-					}).format(item.product.price)}
+					{formatToCurrentcy(item.product.price)}
 				</div>
 				<CartActions item={item} />
 			</div>
