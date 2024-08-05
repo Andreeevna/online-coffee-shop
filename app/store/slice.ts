@@ -1,3 +1,5 @@
+'use client'
+
 import { cart } from '@/data/cart.data'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { IAddToCartPayLoad, IInitialState } from './types'

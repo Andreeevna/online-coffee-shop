@@ -1,5 +1,5 @@
 'use client'
-import { cart } from '@/data/cart.data'
+import { useTypedSelector } from '@/hooks/useTypedSelector'
 import {
 	Button,
 	Drawer,
@@ -18,6 +18,7 @@ const Cart: FC = () => {
 	const [isOpen, setIsOpen] = useState(false)
 
 	const btnRef = useRef<HTMLButtonElement>(null)
+	const cart = useTypedSelector(state => state.cart.items)
 
 	//TODO add redux
 
