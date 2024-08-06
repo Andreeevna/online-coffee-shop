@@ -1,5 +1,5 @@
 'use client'
-import { useTypedSelector } from '@/hooks/useTypedSelector'
+import { useCart } from '@/hooks/useCart'
 import { formatToCurrentcy } from '@/utils/format-to'
 import {
 	Button,
@@ -19,12 +19,8 @@ const Cart: FC = () => {
 	const [isOpen, setIsOpen] = useState(false)
 
 	const btnRef = useRef<HTMLButtonElement>(null)
-	const cart = useTypedSelector(state => state.cart.items)
 
-	const total = cart.reduce(
-		(acc, item) => (acc += item.product.price * item.quantity),
-		0
-	)
+	const { cart, total } = useCart()
 
 	return (
 		<div>

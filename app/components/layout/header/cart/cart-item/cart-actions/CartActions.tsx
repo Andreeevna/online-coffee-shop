@@ -1,6 +1,7 @@
 'use client'
 
 import { useActions } from '@/hooks/useActions'
+import { useCart } from '@/hooks/useCart'
 import { ICartItem } from '@/types/cart-item.interface'
 import { AddIcon, MinusIcon } from '@chakra-ui/icons'
 import { Button, HStack, Input, useNumberInput } from '@chakra-ui/react'
@@ -19,6 +20,9 @@ export const CartActions: FC<{ item: ICartItem }> = ({ item }) => {
 	const input = getInputProps()
 
 	const { removeFromCart, changeQuantity } = useActions()
+
+	const { cart, total } = useCart()
+	const qnt = cart.find(cartitem => cartitem.id === item.id)?.quantity
 
 	return (
 		<div className='mt-3'>
@@ -41,6 +45,7 @@ export const CartActions: FC<{ item: ICartItem }> = ({ item }) => {
 					boxSize={7}
 					padding={1.5}
 					textAlign='center'
+					value={qnt || 1}
 				/>
 				<Button
 					{...inc}
