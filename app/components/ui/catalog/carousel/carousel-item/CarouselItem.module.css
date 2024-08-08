@@ -1,5 +1,5 @@
 .item {
-	@apply rounded-xl bg-brige opacity-40 p-5 pt-0;
+	@apply rounded-3xl bg-light-green p-6 pt-0;
 }
 
 .active {

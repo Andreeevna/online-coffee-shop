@@ -1,7 +1,15 @@
-.layout main {
+.layout {
 	@apply py-8 px-10;
 }
 
 .layout {
 	@apply max-w-[1440px];
+}
+
+.main {
+	@apply flex items-center justify-center;
+}
+
+.content {
+	@apply max-w-7xl;
 }

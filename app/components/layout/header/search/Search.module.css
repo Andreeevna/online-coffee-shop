@@ -2,18 +2,14 @@
 	@apply relative w-2/6;
 }
 
-.search div {
-	@apply relative;
-}
-
 .search::before {
 	content: '';
-	@apply bg-light-green pt-[120%] w-[120%]  rounded-full absolute -top-[300%] -left-[20%];
-	z-index: -1;
+	@apply bg-light-green pt-[120%] w-[120%]  rounded-full absolute -top-[300%] -left-[20%]
+	opacity-40;
+	z-index: -100;
 }
 
 .searchInput {
 	padding-bottom: 5px;
-	z-index: 100;
 	border-bottom: 2px solid #b6b4b3;
 }

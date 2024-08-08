@@ -1,11 +1,12 @@
 'use client'
+import { IProduct } from '@/types/product.interface'
 import { FC } from 'react'
 import Carousel from './carousel/Carousel'
 
-const Catalog: FC = () => {
+const Catalog: FC<{ products: IProduct[] }> = ({ products }) => {
 	return (
 		<div>
-			<Carousel />
+			<Carousel products={products} />
 		</div>
 	)
 }

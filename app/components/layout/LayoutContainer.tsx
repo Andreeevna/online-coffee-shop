@@ -16,7 +16,10 @@ export const LayoutContainer: FC<ILayoutContainerProps> = ({
 	return (
 		<div className={styles.layout}>
 			<Header />
-			<main> {children}</main>
+
+			<main className={styles.main}>
+				<section className={styles.content}>{children}</section>
+			</main>
 		</div>
 	)
 }
