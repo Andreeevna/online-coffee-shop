@@ -1,0 +1,24 @@
+.item {
+	@apply rounded-xl bg-brige opacity-40 p-5 pt-0;
+}
+
+.active {
+}
+
+.image {
+	@apply -mt-7;
+}
+
+.name {
+}
+
+.heading {
+	@apply text-lg text-brige  mt-3 font-bold;
+}
+
+.name {
+}
+
+.description {
+	@apply mt-5 text-brige opacity-90;
+}
