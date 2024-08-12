@@ -5,7 +5,7 @@ export const products: IProduct[] = [
 		id: 1,
 		name: 'Iced Green lemonade',
 		description:
-			'Tea base: Black tea is usually used, which gives the drink a deep taste and aroma.Lemonade: Freshly squeezed lemon juice is mixed with sugar or syrup to create sweet and sour lemonade.',
+			'Tea base: Black tea is usually used, which gives the drink a deep taste and aroma.Lemonade.',
 		price: 19,
 		reviews: [],
 		images: [
@@ -14,24 +14,24 @@ export const products: IProduct[] = [
 			'/images/products/ice-lemonade/ice-lemonade.png',
 		],
 	},
-	{
-		id: 2,
-		name: 'Berry frappuccino cream',
-		description:
-			'Berry Frappuccino Cream from Starbucks is a sweet and creamy drink that combines rich berry notes with a delicate creamy texture. This drink is an excellent choice for those who are looking for something lighter compared to traditional coffee options, offering freshness and brightness of berry flavor.',
-		price: 10,
-		reviews: [],
-		images: [
-			'/images/products/berry-frappuccino-cream/berry-frappuccino1.png',
-			'/images/products/berry-frappuccino-cream/berry-frappuccino.png',
-			'/images/products/berry-frappuccino-cream/berry-frappuccino2.png',
-		],
-	},
+	// {
+	// 	id: 2,
+	// 	name: 'Berry frappuccino cream',
+	// 	description:
+	// 		'This drink is an excellent choice for those who are looking for something lighter compared to traditional coffee options, offering freshness and brightness of berry flavor.',
+	// 	price: 10,
+	// 	reviews: [],
+	// 	images: [
+	// 		'/images/products/berry-frappuccino-cream/berry-frappuccino.png',
+	// 		'/images/products/berry-frappuccino-cream/berry-frappuccino.png',
+	// 		'/images/products/berry-frappuccino-cream/berry-frappuccino2.png',
+	// 	],
+	// },
 	{
 		id: 3,
 		name: 'Ice Сappuccino',
 		description:
-			'Ice Cappuccino from Starbucks is a refreshing version of the classic cappuccino, adapted for cool consumption. This drink is perfect for a hot summer day, offering a balanced taste of coffee with milk cream and a light texture of ice.',
+			'This drink is perfect for a hot summer day, offering a balanced taste of coffee with milk cream and a light texture of ice.',
 		price: 11,
 		reviews: [],
 		images: [
@@ -44,7 +44,7 @@ export const products: IProduct[] = [
 		id: 4,
 		name: 'Frapuccino',
 		description:
-			'Frapuccino is a famous drink that combines the freshness and lightness of a frosty drink with the richness of coffee flavor. This drink has become a symbol of Starbucks and attracts millions of fans around the world due to its unique taste and texture.',
+			'This drink has become a symbol of Starbucks and attracts millions of fans around the world due to its unique taste and texture.',
 		price: 8,
 		reviews: [],
 		images: [
@@ -57,7 +57,7 @@ export const products: IProduct[] = [
 		id: 5,
 		name: 'latte cream',
 		description:
-			'Frapuccino is a famous drink that combines the freshness and lightness of a frosty drink with the richness of coffee flavor. This drink has become a symbol of Starbucks and attracts millions of fans around the world due to its unique taste and texture.',
+			'This drink has become a symbol of Starbucks and attracts millions of fans around the world due to its unique taste and texture.',
 		price: 9,
 		reviews: [],
 		images: [

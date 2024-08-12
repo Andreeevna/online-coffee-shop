@@ -1,24 +1,50 @@
 .item {
-	@apply rounded-3xl bg-light-green p-6 pt-0;
+	@apply rounded-3xl bg-light-green p-6 pt-0 mb-5;
 }
 
 .active {
 }
 
 .image {
-	@apply -mt-7;
+	@apply -mt-16;
 }
 
 .name {
 }
 
 .heading {
-	@apply text-lg text-brige  mt-3 font-bold;
+	@apply text-xl text-brige  mt-3 font-bold leading-7;
+	max-height: 2.4rem;
+}
+
+.heading div {
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
 }
 
 .name {
 }
 
 .description {
-	@apply mt-5 text-brige opacity-90;
+	@apply mt-5 text-brige opacity-90 text-sm;
+}
+
+.active {
+	@apply bg-green shadow-2xl bg-cover;
+	transform: scale(1.12);
+	background-image: linear-gradient(
+			to bottom,
+			transparent,
+			rgba(0, 141, 100, 1)
+		),
+		url('../../../../../../public/images/bg.png');
+	background-position: center calc(100% - 100px);
+	background-size: 230%;
+	background-repeat: no-repeat;
+}
+
+.active .heading {
+	@apply text-white text-3xl leading-9;
 }

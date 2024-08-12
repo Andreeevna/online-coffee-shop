@@ -7,7 +7,7 @@ import clsx from 'clsx'
 import styles from './CarouselItem.module.css'
 
 const CarouselItem: FC<{ product: IProduct }> = ({ product }) => {
-	const isActive = false
+	const isActive = product.id == 3
 	return (
 		<div
 			className={clsx(styles.item, {
@@ -19,10 +19,15 @@ const CarouselItem: FC<{ product: IProduct }> = ({ product }) => {
 				alt={product.name}
 				src={product.images[0]}
 				width={200}
-				height={200}
+				height={100}
+				style={{ objectFit: 'contain' }}
 			/>
-			<div className={styles.heading}>{product.name}</div>
-			<div className={styles.description}>{product.description}</div>
+			<div className={styles.heading}>
+				<div>{product.name}</div>
+			</div>
+			{!isActive && (
+				<div className={styles.description}>{product.description}</div>
+			)}
 		</div>
 	)
 }
