@@ -1,3 +1,5 @@
+'use client'
+
 import { useActions } from '@/hooks/useActions'
 import { IProduct } from '@/types/product.interface'
 import { FC } from 'react'

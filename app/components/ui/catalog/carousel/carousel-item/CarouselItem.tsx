@@ -7,6 +7,7 @@ import { useActions } from '@/hooks/useActions'
 import clsx from 'clsx'
 import CarouselButton from './CarouselButton'
 import styles from './CarouselItem.module.css'
+import CarouselVariations from './CarouselVariations'
 
 const CarouselItem: FC<{ product: IProduct }> = ({ product }) => {
 	const isActive = product.id == 3
@@ -31,6 +32,7 @@ const CarouselItem: FC<{ product: IProduct }> = ({ product }) => {
 			</div>
 			{isActive ? (
 				<>
+					<CarouselVariations />
 					<div className='text-center'>
 						<CarouselButton product={product} />
 					</div>

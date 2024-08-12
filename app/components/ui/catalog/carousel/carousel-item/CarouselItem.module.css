@@ -48,3 +48,16 @@
 .active .heading {
 	@apply text-white text-3xl leading-9;
 }
+
+.vatiations {
+	@apply grid grid-cols-4 gap-4;
+}
+
+.vatiations_button {
+	@apply mt-3  transition-colors text-[0.6rem] font-semibold border border-solid border-white bg-transparent text-white
+	rounded-sm;
+}
+
+.active-button .vatiations_button {
+	@apply bg-white text-dark-green;
+}
