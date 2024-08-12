@@ -3,11 +3,15 @@ import { IProduct } from '@/types/product.interface'
 import Image from 'next/image'
 import { FC } from 'react'
 
+import { useActions } from '@/hooks/useActions'
 import clsx from 'clsx'
+import CarouselButton from './CarouselButton'
 import styles from './CarouselItem.module.css'
 
 const CarouselItem: FC<{ product: IProduct }> = ({ product }) => {
 	const isActive = product.id == 3
+
+	const { addToCart } = useActions()
 	return (
 		<div
 			className={clsx(styles.item, {
@@ -25,7 +29,13 @@ const CarouselItem: FC<{ product: IProduct }> = ({ product }) => {
 			<div className={styles.heading}>
 				<div>{product.name}</div>
 			</div>
-			{!isActive && (
+			{isActive ? (
+				<>
+					<div className='text-center'>
+						<CarouselButton product={product} />
+					</div>
+				</>
+			) : (
 				<div className={styles.description}>{product.description}</div>
 			)}
 		</div>
