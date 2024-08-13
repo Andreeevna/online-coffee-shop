@@ -9,15 +9,26 @@ import CarouselButton from './CarouselButton'
 import styles from './CarouselItem.module.css'
 import CarouselVariations from './CarouselVariations'
 
-const CarouselItem: FC<{ product: IProduct }> = ({ product }) => {
+interface ICarouselItem {
+	product: IProduct
+	isActive: boolean
+	selectedItem: () => void
+}
+
+const CarouselItem: FC<ICarouselItem> = ({
+	product,
+	isActive,
+	selectedItem,
+}) => {
 	const [selectedSize, setSelectedSize] = useState<TypeSize>('SHORT')
-	const isActive = product.id == 3
+	// const isActive = product.id == 3
 
 	return (
-		<div
+		<button
 			className={clsx(styles.item, {
 				[styles.active]: isActive,
 			})}
+			onClick={selectedItem}
 		>
 			<Image
 				className={styles.image}
@@ -48,7 +59,7 @@ const CarouselItem: FC<{ product: IProduct }> = ({ product }) => {
 			) : (
 				<div className={styles.description}>{product.description}</div>
 			)}
-		</div>
+		</button>
 	)
 }
 
