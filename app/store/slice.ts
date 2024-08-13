@@ -13,14 +13,13 @@ export const cartSlice = createSlice({
 	initialState,
 	reducers: {
 		addToCart: (state, action: PayloadAction<IAddToCartPayLoad>) => {
-			console.log(action.payload)
 			const id = state.items.length
 
-			const item = state.items.find(
-				el => el.product.id === action.payload.product.id
+			const isExistSize = state.items.some(
+				el => el.size === action.payload.size
 			)
 
-			if (item?.size !== action.payload.size) {
+			if (!isExistSize) {
 				state.items.push({ ...action.payload, id })
 			}
 		},
