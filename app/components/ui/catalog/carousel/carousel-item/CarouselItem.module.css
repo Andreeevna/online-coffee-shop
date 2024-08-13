@@ -58,6 +58,6 @@
 	rounded-sm;
 }
 
-.active-button .vatiations_button {
+.active_button {
 	@apply bg-white text-dark-green;
 }

@@ -1,18 +1,18 @@
 'use client'
 import { IProduct } from '@/types/product.interface'
 import Image from 'next/image'
-import { FC } from 'react'
+import { FC, useState } from 'react'
 
-import { useActions } from '@/hooks/useActions'
+import { TypeSize } from '@/store/types'
 import clsx from 'clsx'
 import CarouselButton from './CarouselButton'
 import styles from './CarouselItem.module.css'
 import CarouselVariations from './CarouselVariations'
 
 const CarouselItem: FC<{ product: IProduct }> = ({ product }) => {
+	const [selectedSize, setSelectedSize] = useState<TypeSize>('SHORT')
 	const isActive = product.id == 3
 
-	const { addToCart } = useActions()
 	return (
 		<div
 			className={clsx(styles.item, {
@@ -32,9 +32,17 @@ const CarouselItem: FC<{ product: IProduct }> = ({ product }) => {
 			</div>
 			{isActive ? (
 				<>
-					<CarouselVariations />
+					<CarouselVariations
+						productId={product.id}
+						selectedSize={selectedSize}
+						setSelectedSize={setSelectedSize}
+					/>
 					<div className='text-center'>
-						<CarouselButton product={product} />
+						<CarouselButton
+							product={product}
+							selectedSize={selectedSize}
+							setSelectedSize={setSelectedSize}
+						/>
 					</div>
 				</>
 			) : (
