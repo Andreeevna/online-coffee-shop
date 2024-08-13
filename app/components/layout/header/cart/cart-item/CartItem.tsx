@@ -21,6 +21,7 @@ export const CartItem: FC<{ item: ICartItem }> = ({ item }) => {
 				<div className={styles.price}>
 					{formatToCurrentcy(item.product.price)}
 				</div>
+				<div className={styles.variation}>{item.size}</div>
 				<CartActions item={item} />
 			</div>
 		</div>

@@ -27,7 +27,7 @@ const CarouselButton: FC<ICarouselButton> = ({
 					size: selectedSize,
 				})
 			}
-			className='tracking-widest bg-white rounded-xl px-3 py-1 text-xs mt-8 font-normal uppercase text-dark-green'
+			className='tracking-widest bg-white rounded-xl px-3 py-1 text-xs mt-6 font-normal uppercase text-dark-green'
 		>
 			Add to backet
 		</button>

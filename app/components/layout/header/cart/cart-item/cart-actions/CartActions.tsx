@@ -61,7 +61,7 @@ export const CartActions: FC<{ item: ICartItem }> = ({ item }) => {
 				color='#F23C3D'
 				marginTop='3'
 				opacity={0.7}
-				onClick={() => removeFromCart({ id: item.product.id })}
+				onClick={() => removeFromCart({ id: item.id })}
 			>
 				Remove
 			</Button>

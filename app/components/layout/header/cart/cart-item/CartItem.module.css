@@ -9,3 +9,7 @@
 .price {
 	@apply text-sm text-brige mb-2;
 }
+
+.variation {
+	@apply text-xs text-brige opacity-70;
+}
