@@ -3,18 +3,17 @@ import Image from 'next/image'
 import { FC } from 'react'
 import { ICarouselNav } from '../cariusel.interface'
 
+import { products } from '@/data/product.data'
+import { useActions } from '@/hooks/useActions'
 import styles from './CarouselNav.module.css'
 
-const CarouselNav: FC<ICarouselNav> = ({
-	product,
-	isActive,
-	nexHandler,
-	previousHandler,
-}) => {
+const CarouselNav: FC<ICarouselNav> = ({ product, isActive }) => {
+	const { prevSlide, nextSlide } = useActions()
+
 	return (
 		<div className={styles.navigation}>
 			{isActive && (
-				<button onClick={previousHandler} className={styles.arrow_left}>
+				<button onClick={() => prevSlide()} className={styles.arrow_left}>
 					<ChevronLeftIcon fontSize={30} />
 				</button>
 			)}
@@ -28,7 +27,10 @@ const CarouselNav: FC<ICarouselNav> = ({
 				draggable={false}
 			/>
 			{isActive && (
-				<button onClick={nexHandler} className={styles.arrow_right}>
+				<button
+					onClick={() => nextSlide({ carouselLength: products.length })}
+					className={styles.arrow_right}
+				>
 					<ChevronRightIcon fontSize={30} />
 				</button>
 			)}

@@ -5,4 +5,6 @@ export interface ICarouselItem {
 	index: number
 }
 
-export interface ICarouselNav extends Omit<ICarouselItem, 'index'> {}
+export interface ICarouselNav extends Omit<ICarouselItem, 'index'> {
+	isActive: boolean
+}

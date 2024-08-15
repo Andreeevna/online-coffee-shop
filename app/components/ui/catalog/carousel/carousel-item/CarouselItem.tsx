@@ -27,7 +27,7 @@ const CarouselItem: FC<ICarouselItem> = ({ product, index }) => {
 			aria-label='Select item'
 			role='button'
 		>
-			<CarouselNav product={product} />
+			<CarouselNav product={product} isActive={isActive} />
 			<div>
 				<div className={styles.heading}>
 					<div>{product.name}</div>
