@@ -23,13 +23,16 @@ const CarouselItem: FC<ICarouselItem> = ({ product, index }) => {
 			className={clsx(styles.item, {
 				[styles.active]: isActive,
 			})}
-			onClick={() => selectSlide(index)}
 			aria-label='Select item'
 			role='button'
 		>
-			<CarouselNav product={product} isActive={isActive} />
+			<CarouselNav
+				onSelectSlide={() => selectSlide(index)}
+				product={product}
+				isActive={isActive}
+			/>
 			<div>
-				<div className={styles.heading}>
+				<div className={styles.heading} onClick={() => selectSlide(index)}>
 					<div>{product.name}</div>
 				</div>
 				{isActive ? (

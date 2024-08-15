@@ -7,7 +7,11 @@ import { products } from '@/data/product.data'
 import { useActions } from '@/hooks/useActions'
 import styles from './CarouselNav.module.css'
 
-const CarouselNav: FC<ICarouselNav> = ({ product, isActive }) => {
+const CarouselNav: FC<ICarouselNav> = ({
+	onSelectSlide,
+	product,
+	isActive,
+}) => {
 	const { prevSlide, nextSlide } = useActions()
 
 	return (
@@ -17,15 +21,18 @@ const CarouselNav: FC<ICarouselNav> = ({ product, isActive }) => {
 					<ChevronLeftIcon fontSize={30} />
 				</button>
 			)}
-			<Image
-				className={styles.image}
-				alt={product.name}
-				src={product.images[0]}
-				width={200}
-				height={100}
-				style={{ objectFit: 'contain' }}
-				draggable={false}
-			/>
+			<button onClick={onSelectSlide}>
+				<Image
+					className={styles.image}
+					alt={product.name}
+					src={product.images[0]}
+					width={200}
+					height={100}
+					style={{ objectFit: 'contain' }}
+					draggable={false}
+				/>
+			</button>
+
 			{isActive && (
 				<button
 					onClick={() => nextSlide({ carouselLength: products.length })}
