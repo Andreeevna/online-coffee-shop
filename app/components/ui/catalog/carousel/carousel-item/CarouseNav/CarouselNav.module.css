@@ -1,0 +1,15 @@
+.navigation {
+	@apply flex items-center justify-center relative;
+}
+
+.image {
+	@apply -mt-16;
+}
+
+.arrow_left {
+	@apply absolute top-10 -left-5 text-white;
+}
+
+.arrow_right {
+	@apply absolute top-10 -right-5 text-white;
+}

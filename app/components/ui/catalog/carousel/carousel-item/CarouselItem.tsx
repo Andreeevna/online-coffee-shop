@@ -1,65 +1,62 @@
 'use client'
-import { IProduct } from '@/types/product.interface'
-import Image from 'next/image'
 import { FC, useState } from 'react'
 
 import { TypeSize } from '@/store/types'
 import clsx from 'clsx'
+import { ICarouselItem } from './cariusel.interface'
 import CarouselButton from './CarouselButton'
 import styles from './CarouselItem.module.css'
 import CarouselVariations from './CarouselVariations'
-
-interface ICarouselItem {
-	product: IProduct
-	isActive: boolean
-	selectedItem: () => void
-}
+import CarouselNav from './CarouseNav/CarouselNav'
 
 const CarouselItem: FC<ICarouselItem> = ({
 	product,
 	isActive,
 	selectedItem,
+	nexHandler,
+	previousHandler,
 }) => {
 	const [selectedSize, setSelectedSize] = useState<TypeSize>('SHORT')
-	// const isActive = product.id == 3
 
 	return (
-		<button
+		<div
 			className={clsx(styles.item, {
 				[styles.active]: isActive,
 			})}
 			onClick={selectedItem}
+			aria-label='Select item'
+			role='button'
 		>
-			<Image
-				className={styles.image}
-				alt={product.name}
-				src={product.images[0]}
-				width={200}
-				height={100}
-				style={{ objectFit: 'contain' }}
+			<CarouselNav
+				product={product}
+				isActive={isActive}
+				nexHandler={nexHandler}
+				previousHandler={previousHandler}
 			/>
-			<div className={styles.heading}>
-				<div>{product.name}</div>
-			</div>
-			{isActive ? (
-				<>
-					<CarouselVariations
-						productId={product.id}
-						selectedSize={selectedSize}
-						setSelectedSize={setSelectedSize}
-					/>
-					<div className='text-center'>
-						<CarouselButton
-							product={product}
+			<div>
+				<div className={styles.heading}>
+					<div>{product.name}</div>
+				</div>
+				{isActive ? (
+					<>
+						<CarouselVariations
+							productId={product.id}
 							selectedSize={selectedSize}
 							setSelectedSize={setSelectedSize}
 						/>
-					</div>
-				</>
-			) : (
-				<div className={styles.description}>{product.description}</div>
-			)}
-		</button>
+						<div className='text-center'>
+							<CarouselButton
+								product={product}
+								selectedSize={selectedSize}
+								setSelectedSize={setSelectedSize}
+							/>
+						</div>
+					</>
+				) : (
+					<div className={styles.description}>{product.description}</div>
+				)}
+			</div>
+		</div>
 	)
 }
 

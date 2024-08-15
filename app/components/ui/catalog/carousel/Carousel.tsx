@@ -16,6 +16,7 @@ const Carousel: FC<{ products: IProduct[] }> = ({ products }) => {
 	const previousHandler = () => {
 		selectedItemIndex > 0 && setSelectedItemIndex(selectedItemIndex - 1)
 	}
+
 	return (
 		<section className={styles.carousel}>
 			{products.map((product, index) => (
@@ -24,6 +25,8 @@ const Carousel: FC<{ products: IProduct[] }> = ({ products }) => {
 					key={product.id}
 					isActive={index === selectedItemIndex}
 					selectedItem={() => setSelectedItemIndex(index)}
+					nexHandler={nexHandler}
+					previousHandler={previousHandler}
 				/>
 			))}
 		</section>
