@@ -4,6 +4,7 @@ import { FC, useState } from 'react'
 import { useActions } from '@/hooks/useActions'
 import { TypeSize } from '@/store/cart/types'
 import clsx from 'clsx'
+import { motion } from 'framer-motion'
 import { ICarouselItem } from './cariusel.interface'
 import CarouselButton from './CarouselButton'
 import styles from './CarouselItem.module.css'
@@ -19,12 +20,15 @@ const CarouselItem: FC<ICarouselItem> = ({ product, index }) => {
 
 	const isActive = index === selectedItemIndex
 	return (
-		<div
+		<motion.div
 			className={clsx(styles.item, {
 				[styles.active]: isActive,
 			})}
 			aria-label='Select item'
 			role='button'
+			initial={{ scale: 1 }}
+			animate={isActive ? { scale: 1.12 } : {}}
+			transition={{ duration: 1, type: 'spring' }}
 		>
 			<CarouselNav
 				onSelectSlide={() => selectSlide(index)}
@@ -54,7 +58,7 @@ const CarouselItem: FC<ICarouselItem> = ({ product, index }) => {
 					<div className={styles.description}>{product.description}</div>
 				)}
 			</div>
-		</div>
+		</motion.div>
 	)
 }
 

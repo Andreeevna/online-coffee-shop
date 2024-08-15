@@ -29,7 +29,7 @@
 
 .active {
 	@apply bg-green shadow-2xl bg-cover;
-	transform: scale(1.12);
+	/* transform: scale(1.12); */
 	background-image: linear-gradient(
 			to bottom,
 			transparent,
