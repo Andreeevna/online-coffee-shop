@@ -2,10 +2,7 @@ import { IProduct } from '@/types/product.interface'
 
 export interface ICarouselItem {
 	product: IProduct
-	isActive: boolean
-	selectedItem: () => void
-	nexHandler: () => void
-	previousHandler: () => void
+	index: number
 }
 
-export interface ICarouselNav extends Omit<ICarouselItem, 'selectedItem'> {}
+export interface ICarouselNav extends Omit<ICarouselItem, 'index'> {}

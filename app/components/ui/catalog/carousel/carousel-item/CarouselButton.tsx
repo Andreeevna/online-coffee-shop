@@ -1,7 +1,7 @@
 'use client'
 
 import { useActions } from '@/hooks/useActions'
-import { TypeSize } from '@/store/types'
+import { TypeSize } from '@/store/cart/types'
 import { IProduct } from '@/types/product.interface'
 import { Dispatch, FC, SetStateAction } from 'react'
 

@@ -12,7 +12,8 @@ import {
 	REHYDRATE,
 } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
-import { cartSlice } from './slice'
+import { carouselSlice } from './carousel/carouselSlice'
+import { cartSlice } from './cart/slice'
 
 const persistConfig = {
 	key: 'coffee-shop',
@@ -22,6 +23,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
 	cart: cartSlice.reducer,
+	carousel: carouselSlice.reducer,
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

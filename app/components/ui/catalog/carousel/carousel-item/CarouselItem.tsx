@@ -1,38 +1,33 @@
 'use client'
 import { FC, useState } from 'react'
 
-import { TypeSize } from '@/store/types'
+import { useActions } from '@/hooks/useActions'
+import { TypeSize } from '@/store/cart/types'
 import clsx from 'clsx'
 import { ICarouselItem } from './cariusel.interface'
 import CarouselButton from './CarouselButton'
 import styles from './CarouselItem.module.css'
 import CarouselVariations from './CarouselVariations'
 import CarouselNav from './CarouseNav/CarouselNav'
+import { useCarousel } from './useCarousel'
 
-const CarouselItem: FC<ICarouselItem> = ({
-	product,
-	isActive,
-	selectedItem,
-	nexHandler,
-	previousHandler,
-}) => {
+const CarouselItem: FC<ICarouselItem> = ({ product, index }) => {
 	const [selectedSize, setSelectedSize] = useState<TypeSize>('SHORT')
 
+	const { selectedItemIndex } = useCarousel()
+	const { selectSlide } = useActions()
+
+	const isActive = index === selectedItemIndex
 	return (
 		<div
 			className={clsx(styles.item, {
 				[styles.active]: isActive,
 			})}
-			onClick={selectedItem}
+			onClick={() => selectSlide(index)}
 			aria-label='Select item'
 			role='button'
 		>
-			<CarouselNav
-				product={product}
-				isActive={isActive}
-				nexHandler={nexHandler}
-				previousHandler={previousHandler}
-			/>
+			<CarouselNav product={product} />
 			<div>
 				<div className={styles.heading}>
 					<div>{product.name}</div>
