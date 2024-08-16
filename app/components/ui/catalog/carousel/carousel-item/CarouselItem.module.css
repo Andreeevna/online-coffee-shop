@@ -11,6 +11,8 @@
 .heading {
 	@apply text-xl text-brige  mt-3 font-bold leading-7;
 	max-height: 2.4rem;
+	will-change: transform;
+	backface-visibility: hidden;
 }
 
 .heading div {
@@ -43,6 +45,10 @@
 
 .active .heading {
 	@apply text-white text-3xl leading-9;
+	display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .vatiations {
