@@ -30,6 +30,17 @@ const config: Config = {
 				'gradient-conic':
 					'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
 			},
+			keyframes: {
+				animationOpacity: {
+					from: { opacity: '0.2' },
+					to: {
+						opacity: '1',
+					},
+				},
+			},
+			animation: {
+				opacity: 'animationOpacity 0.5s ease-in-out',
+			},
 		},
 	},
 	plugins: [],
