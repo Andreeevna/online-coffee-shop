@@ -16,7 +16,6 @@ export const LayoutContainer: FC<ILayoutContainerProps> = ({
 	return (
 		<div className={styles.layout}>
 			<Header />
-
 			<main className={styles.main}>
 				<section className={styles.content}>{children}</section>
 			</main>
