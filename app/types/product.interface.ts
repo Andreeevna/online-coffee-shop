@@ -1,9 +1,9 @@
 export interface IProduct {
 	id: number
 	name: string
+	slug: string
 	description: string
 	price: number
-	/*TODO  add reviews interface*/
 	reviews: []
 	images: string[]
 }

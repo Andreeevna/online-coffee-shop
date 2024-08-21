@@ -4,6 +4,7 @@ export const products: IProduct[] = [
 	{
 		id: 1,
 		name: 'Iced Green lemonade',
+		slug: 'iced-green-lemonade',
 		description:
 			'Tea base: Black tea is usually used, which gives the drink a deep taste and aroma.Lemonade.',
 		price: 19,
@@ -30,6 +31,7 @@ export const products: IProduct[] = [
 	{
 		id: 3,
 		name: 'Ice Сappuccino',
+		slug: 'ice-cappuccino',
 		description:
 			'This drink is perfect for a hot summer day, offering a balanced taste of coffee with milk cream and a light texture of ice.',
 		price: 11,
@@ -43,6 +45,7 @@ export const products: IProduct[] = [
 	{
 		id: 4,
 		name: 'Frapuccino',
+		slug: 'frapuccino',
 		description:
 			'This drink has become a symbol of Starbucks and attracts millions of fans around the world due to its unique taste and texture.',
 		price: 8,
@@ -56,6 +59,7 @@ export const products: IProduct[] = [
 	{
 		id: 5,
 		name: 'latte cream',
+		slug: 'latte-cream',
 		description:
 			'This drink has become a symbol of Starbucks and attracts millions of fans around the world due to its unique taste and texture.',
 		price: 9,

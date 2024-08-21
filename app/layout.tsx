@@ -3,8 +3,7 @@
 import { ChakraProvider } from '@chakra-ui/react'
 import 'antd/dist/reset.css'
 import { Provider } from 'react-redux'
-import { PersistGate } from 'redux-persist/integration/react'
-import { persistor, store } from './store/store'
+import { store } from './store/store'
 
 // export const metadata = {
 // 	title: 'Online coffee',
@@ -20,9 +19,9 @@ export default function RootLayout({
 		<html lang='en'>
 			<body>
 				<Provider store={store}>
-					<PersistGate loading={null} persistor={persistor}>
-						<ChakraProvider>{children}</ChakraProvider>
-					</PersistGate>
+					{/* <PersistGate loading={null} persistor={persistor}> */}
+					<ChakraProvider>{children}</ChakraProvider>
+					{/* </PersistGate> */}
 				</Provider>
 			</body>
 		</html>

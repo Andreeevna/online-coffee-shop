@@ -5,6 +5,7 @@ import { useActions } from '@/hooks/useActions'
 import { TypeSize } from '@/store/cart/types'
 import clsx from 'clsx'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import { ICarouselItem } from './cariusel.interface'
 import CarouselButton from './CarouselButton'
 import styles from './CarouselItem.module.css'
@@ -53,6 +54,7 @@ const CarouselItem: FC<ICarouselItem> = ({ product, index }) => {
 								setSelectedSize={setSelectedSize}
 							/>
 						</div>
+						<Link href={`/product/${product.slug}`}>More info</Link>
 					</>
 				) : (
 					<div className={styles.description}>{product.description}</div>
